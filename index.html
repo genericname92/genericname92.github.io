@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Asteroids</title>
+    <link rel="stylesheet" type="text/css" href="css/keys.css">
+    <link rel="stylesheet" type="text/css" href="css/asteroids.css">
+  </head>
+  <body>
+      <canvas id="game-canvas"></canvas>
+      <div id="gameOver">
+      </div>
+    <div id="game-status"></div>
+    <div class="game-rules">
+      <h1>Welcome to Asteroids!</h1>
+      <h2>Press any key to start playing!</h2>
+      <label>Game controls
+        <ul>
+          <li><kbd class="light">w</kbd> : Accel Up</li>
+          <li><kbd class="light">a</kbd> : Accel Left</li>
+          <li><kbd class="light">s</kbd> : Accel Down</li>
+          <li><kbd class="light">d</kbd> : Accel Right</li>
+          <li><kbd class="light">space</kbd> : Fire bullets</li>
+        </ul>
+      </label>
+    </div>
+    <script src="lib/keymaster.js"></script>
+    <script src="lib/moving_object.js"></script>
+    <script src="lib/util.js"></script>
+    <script src="lib/ship.js"></script>
+    <script src="lib/asteroid.js"></script>
+    <script src="lib/aliens.js"></script>
+    <script src="lib/bullet.js"></script>
+    <script src="lib/game.js"></script>
+    <script src="lib/game_view.js"></script>
+    <script>
+      (function () {
+        var canvasEl = document.getElementsByTagName("canvas")[0];
+        canvasEl.width = Asteroids.Game.DIM_X;
+        canvasEl.height = Asteroids.Game.DIM_Y;
+        var ctx = canvasEl.getContext("2d");
+        document.addEventListener('keydown', function(){
+          event.currentTarget.removeEventListener(event.type, arguments.callee);
+          var game = new Asteroids.Game();
+          new Asteroids.GameView(game, ctx).start();
+        })
+    })();
+    </script>
+
+  </body>
+</html>

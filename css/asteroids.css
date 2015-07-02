@@ -1,0 +1,39 @@
+body {
+  background: black;
+}
+canvas {
+  float: left;
+  background: black;
+  border: 1px solid white;
+}
+.game-rules {
+  float: left;
+  text-align: left;
+  width: 30%;
+  font-size: 20px;
+  color: white;
+  margin-left: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+#game-status {
+  color: white;
+  font-size: 20px;
+}
+
+#gameOver {
+  position: absolute;
+  color: white;
+  font-size: 60px;
+  z-index: 2;
+  left: 108px;
+  top: 300px;
+  text-align: center;
+}
