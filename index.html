@@ -11,6 +11,7 @@
       </div>
     <div id="game-status"></div>
     <div class="game-rules">
+      <button class="soundToggle" type="button">Sound ON</button>
       <h1>Welcome to Asteroids!</h1>
       <h2>Press any key to start playing!</h2>
       <label>Game controls
@@ -38,9 +39,11 @@
         canvasEl.width = Asteroids.Game.DIM_X;
         canvasEl.height = Asteroids.Game.DIM_Y;
         var ctx = canvasEl.getContext("2d");
+        var game = new Asteroids.Game();
+        var sound = document.getElementsByClassName("soundToggle")[0];
+        sound.addEventListener("click", function(){ game.toggleSound() });
         document.addEventListener('keydown', function(){
           event.currentTarget.removeEventListener(event.type, arguments.callee);
-          var game = new Asteroids.Game();
           new Asteroids.GameView(game, ctx).start();
         })
     })();
