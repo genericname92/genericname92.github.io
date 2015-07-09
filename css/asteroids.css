@@ -27,6 +27,7 @@ li {
 #game-status {
   color: white;
   font-size: 20px;
+  position: absolute;
 }
 
 #gameOver {
@@ -37,4 +38,8 @@ li {
   left: 108px;
   top: 300px;
   text-align: center;
+}
+h2 {
+  position: absolute;
+  right: 700px;
 }
