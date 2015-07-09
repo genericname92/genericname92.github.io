@@ -42,7 +42,7 @@
         var game = new Asteroids.Game();
         var sound = document.getElementsByClassName("soundToggle")[0];
         sound.addEventListener("click", function(){ game.toggleSound() });
-        document.addEventListener('keydown', function(){
+        document.addEventListener('keydown', function(event){
           event.currentTarget.removeEventListener(event.type, arguments.callee);
           new Asteroids.GameView(game, ctx).start();
         })
